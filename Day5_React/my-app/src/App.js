@@ -1,23 +1,17 @@
 import React from 'react'
+import Person from './Components/Person'
+import Adhar_card from './Components/Adhar_card'
 
-const App = () => {
 
-  const name ='shivam';
-  const name2 ='mohan';
+export const App = () => {
   return (
-    <>
-    <div>
+  <>
+    <Person/>
+    
+      <Adhar_card/>
+      
 
-<h1>My nme is {name}</h1>
-<p>my name is {name2}</p>
-
-    </div>
-
-    <div>
-      <h1>hello n</h1>
-    </div>
     </>
   )
 }
-
 export default App
