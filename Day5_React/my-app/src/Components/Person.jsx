@@ -1,14 +1,6 @@
 import React from 'react'
 
-const Person = () => {
-
-  
- const person ={
-name:'Shivam',
-age:25,
-email:"shivamji019@gmail.com",
-phone:7898214067,
- };
+const Person = ({name,age,gmail,father}) => {
 
 //  const style={
 //     border:'2px solid yellow',
@@ -37,15 +29,21 @@ phone:7898214067,
     // style={style} 
     className='shivam'
     >
+     
+      <h1>{name}</h1>
       <h1 
     //   style={style2}
-      >{person.age}</h1>
-      <h1>{person.name}</h1>
-      <h1>{person.email}</h1>
-      <h1>{person.phone}</h1>
+      >{age}</h1>
+      <h1>{gmail}</h1>
+    
+      <h1>{father}</h1>
+
+    
     </div>
+
+    
     </>
   );
-}
+};
 
-export default Person
+export default Person;
