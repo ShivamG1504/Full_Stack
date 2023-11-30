@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 const Persondetail = () => {
-    // const [name, setName] = useState("Shailesh");
+    // const [name, setName] = useState("Shivam");
     // const [age, setAge] = useState("30");
     // const [gmail, setGmail]=useState("sha2gmail.com")
     // const update= () => {
-    //     setName("Dubey");
+    //     setName("Gupta");
     //     setAge(31);
     //     setGmail("dgsdg@gmail.com")
     // }
