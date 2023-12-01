@@ -1,13 +1,4 @@
-import React from "react";
-import Person from "./Components/Person";
-import Adhar_card from "./Components/Adhar_card";
-import Counter from "./Components/Counter";
-import Persondetail from "./Components/Personaldetail";
-import Product from "./Components/Product";
-import Navbar from "./Components/Navbar";
-
-export const App = () => {
-  const product = [
+export const product = [
     {
       id: 1,
       title:
@@ -77,26 +68,3 @@ export const App = () => {
       category: "Playstation",
     },
   ];
-
-  return (
-    <>
-      {/* <Counter />
-<Persondetail/> */}
-
-      {/* <Person
-    name={"Google"} age={27} gmail={"hello@gmail.com"} father={"Saktiman"} />
-    <Person
-    name={"Anurag"} age={54} gmail={"anurag@gmail.com"} father={"Spiderman"} />
-    <Person
-    name={"Blade Dancer"} age={73} gmail={"bdancer@gmail.com"} father={"Ghost Rider"} />
-    
-      <Adhar_card/> */}
-
-      <div>
-        <Navbar/>
-        <Product product={product} />
-      </div>
-    </>
-  );
-};
-export default App;
