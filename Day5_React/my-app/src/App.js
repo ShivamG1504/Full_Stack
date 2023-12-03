@@ -5,6 +5,8 @@ import Counter from "./Components/Counter";
 import Persondetail from "./Components/Personaldetail";
 import Product from "./Components/Product";
 import Navbar from "./Components/Navbar";
+import Use_Effect from "./Components/Use_Effect";
+import Fetch_Data from "./Components/Fetch_Data";
 
 export const App = () => {
   const product = [
@@ -95,6 +97,8 @@ export const App = () => {
       <div>
         <Navbar/>
         <Product product={product} />
+        {/* <Use_Effect/>*/}
+        <Fetch_Data/>
       </div>
     </>
   );
