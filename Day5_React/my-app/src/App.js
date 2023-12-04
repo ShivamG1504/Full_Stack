@@ -7,6 +7,8 @@ import Product from "./Components/Product";
 import Navbar from "./Components/Navbar";
 import Use_Effect from "./Components/Use_Effect";
 import Fetch_Data from "./Components/Fetch_Data";
+import FormH_Handling from "./Components/FormH_Handling";
+import Multipal_input_handeling from "./Components/Multipal_input_handeling";
 
 export const App = () => {
   const product = [
@@ -95,10 +97,14 @@ export const App = () => {
       <Adhar_card/> */}
 
       <div>
-        <Navbar/>
-        <Product product={product} />
+        {/* <Navbar/> */}
+        {/* <Product product={product} /> */}
         {/* <Use_Effect/>*/}
-        <Fetch_Data/>
+        {/* <Fetch_Data/> */}
+        {/* <FormH_Handling/> */}
+        <Multipal_input_handeling/>
+
+
       </div>
     </>
   );
