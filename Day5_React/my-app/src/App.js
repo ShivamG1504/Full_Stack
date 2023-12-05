@@ -9,6 +9,15 @@ import Use_Effect from "./Components/Use_Effect";
 import Fetch_Data from "./Components/Fetch_Data";
 import FormH_Handling from "./Components/FormH_Handling";
 import Multipal_input_handeling from "./Components/Multipal_input_handeling";
+import To_Do_List from "./Components/To_Do_List";
+import {BrowserRouter as Router,Routes,Route} from'react-router-dom';
+import Home from "./Components/Router/Home";
+import Career from "./Components/Router/Career";
+import About from "./Components/Router/About";
+import Contect from "./Components/Router/Contect";
+import Dynamic_Route from "./Dynamic_Route";
+
+
 
 export const App = () => {
   const product = [
@@ -84,7 +93,22 @@ export const App = () => {
 
   return (
     <>
-      {/* <Counter />
+    <Router>
+      <Navbar/>
+      <Routes>  
+        <Route path={'/'}element={<Home/>}/>
+        <Route path={'/about'}element={<About/>}/>
+        <Route path={'/career'}element={<Career/>}/>
+        <Route path={'/contect'}element={<Contect/>}/>
+        <Route path={'/home/:slug'}element={<Dynamic_Route/>}/>
+
+
+        {/* <Route path={'/products'}element={<Product/>}/> */}
+      
+        
+
+        
+            {/* <Counter />
 <Persondetail/> */}
 
       {/* <Person
@@ -96,16 +120,22 @@ export const App = () => {
     
       <Adhar_card/> */}
 
-      <div>
+      {/* <div> */}
         {/* <Navbar/> */}
         {/* <Product product={product} /> */}
         {/* <Use_Effect/>*/}
         {/* <Fetch_Data/> */}
         {/* <FormH_Handling/> */}
-        <Multipal_input_handeling/>
+        {/* <Multipal_input_handeling/> */}
+        {/* <To_Do_List/> */}
 
 
-      </div>
+
+      {/* </div> */}
+    
+      </Routes>
+
+      </Router>
     </>
   );
 };
