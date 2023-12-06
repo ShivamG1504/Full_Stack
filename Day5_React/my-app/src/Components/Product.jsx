@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { product } from "../Product_Data";
+import { Link } from "react-router-dom";
 
-const Product = ({ product }) => {
+const Product = () => {
   console.log(product);
 
   const [products, setProducts] = useState(product);
@@ -8,13 +10,10 @@ const Product = ({ product }) => {
   const filterMethod = (category) => {
     setProducts(product.filter((data) => data.category == category));
   };
+  
 
   return (
     <>
-    <div className="input-group my-3 justify-content-center ">
-      <input className="bg-warning" type="text" />
-      <button className="btn btn-success">Search</button>
-    </div>
       <div className="container d-flex justify-content-center sticky-top bg-light">
         <button
           onClick={() => setProducts(product)}
@@ -75,7 +74,8 @@ const Product = ({ product }) => {
                   <h1>{data.title}</h1>
                   <p>{data.description}</p>
 
-                  <div
+                  <Link
+                    to={`/products/${data.id}`}
                     style={{
                       display: "flex",
                       justifyContent: "center",
@@ -92,7 +92,7 @@ const Product = ({ product }) => {
                       src={data.imgUrl}
                       alt="img"
                     />
-                  </div>
+                  </Link>
                   <button className="btn btn-warning">
                     {data.price}
                     {""}₹
