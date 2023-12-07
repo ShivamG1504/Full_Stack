@@ -71,8 +71,8 @@ const Product = () => {
                     margin: "1rem",
                   }}
                 >
-                  <h1>{data.title}</h1>
-                  <p>{data.description}</p>
+                  <h1>{data?.title}</h1>
+                  <p>{data?.description}</p>
 
                   <Link
                     to={`/products/${data.id}`}

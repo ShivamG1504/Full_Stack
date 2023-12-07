@@ -16,6 +16,7 @@ import Career from "./Components/Router/Career";
 import About from "./Components/Router/About";
 import Contect from "./Components/Router/Contect";
 import Dynamic_Route from "./Dynamic_Route";
+import SearchItems from "./Components/SearchItems";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path={"/contect"} element={<Contect />} />
           <Route path={"/products"} element={<Product />} />
           <Route path={"/products/:slug"} element={<Dynamic_Route />} />
+          <Route path={"/products/search/:term"} element={<SearchItems />} />
 
           {/* <Counter />
           <Persondetail/> */}
