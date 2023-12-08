@@ -67,7 +67,7 @@ const SearchItems = () => {
         })}
       </div>
   
- 
+ <div >SearchItem-{term}</div>
   </>
   )
 };

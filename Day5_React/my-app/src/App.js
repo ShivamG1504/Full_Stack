@@ -17,20 +17,25 @@ import About from "./Components/Router/About";
 import Contect from "./Components/Router/Contect";
 import Dynamic_Route from "./Dynamic_Route";
 import SearchItems from "./Components/SearchItems";
+import IndianGovernment from "./Components/IndianGovernment";
 
 const App = () => {
+const money = 1000;
+
   return (
     <>
-      <Router>
+    <IndianGovernment money={money}/>
+
+      {/* <Router>
         <Navbar />
-        <Routes>
+        <Routes> */}
           {/* <Route path={"/"} element={<Home />} /> */}
-          <Route path={"/about"} element={<About />} />
+          {/* <Route path={"/about"} element={<About />} />
           <Route path={"/career"} element={<Career />} />
           <Route path={"/contect"} element={<Contect />} />
           <Route path={"/products"} element={<Product />} />
           <Route path={"/products/:slug"} element={<Dynamic_Route />} />
-          <Route path={"/products/search/:term"} element={<SearchItems />} />
+          <Route path={"/products/search/:term"} element={<SearchItems />} /> */}
 
           {/* <Counter />
           <Persondetail/> */}
@@ -54,8 +59,8 @@ const App = () => {
           {/* <To_Do_List/> */}
 
           {/* </div> */}
-        </Routes>
-      </Router>
+        {/* </Routes>
+      </Router> */}
     </>
   );
 };

@@ -32,6 +32,9 @@ const Navbar = () => {
             type="text"
             style={{ width: "400px" }}
           />
+           <button type="submit" className="btn btn-success mx-2">
+            Search
+          </button>
         </form>
         <Link className="text-light p-3 text-decoration-none" to={"/products"}>
           Product
