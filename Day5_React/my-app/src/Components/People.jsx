@@ -13,7 +13,7 @@ const People = () => {
         <h1>{data.person.name}</h1>
         <h1>{data.person.email}</h1>
         <h1>{data.person.contect}</h1>
-        <h1>Conter={data.counter}</h1>
+        <h1>Counter={data.counter}</h1>
         <button onClick={()=>data.setCounter(data.counter+1)} className='btn btn-warning'>Increase</button>
  </div>
  </>
