@@ -1,15 +1,17 @@
 {
   "name": "day17_node_express_mongo",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "superman",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "nodemon": "^3.0.2"
-  }
+  },
+  "description": ""
 }
