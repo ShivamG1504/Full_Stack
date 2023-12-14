@@ -1,9 +1,15 @@
 import express from "express";
 import bodyParser from "express";
+import mongoose from "mongoose";
 
 const app = express();
 app.use(bodyParser.json());
 const arr = [];
+
+mongoose.connect(
+    "mongodb+srv://shivamji019:FqN8LL38IRDZKKDE@volcanus.8addxe8.mongodb.net/"
+      ).then(()=>console.log("mongodb connected..."));
+
 
 //C R U D
 //C = Create-> POST METHOD
