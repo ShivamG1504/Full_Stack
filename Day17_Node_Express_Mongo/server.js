@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
     data: arr,
   });
 
-  // res.send('<h1>this send method</h1>')
+  res.send('<h1>this send method</h1>')
 });
 
 app.get("/superman", (req, res) => {
