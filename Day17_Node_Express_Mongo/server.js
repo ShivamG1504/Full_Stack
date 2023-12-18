@@ -1,9 +1,12 @@
 import express from "express";
 import bodyParser from "express";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cookieParser())
+
 const arr = [];
 
 mongoose
@@ -41,7 +44,10 @@ const User = mongoose.model("User", userSchema);
 
 // Read
 app.get("/", (req, res) => {
-  console.log("This is home Route");
+  // console.log("This is home Route");
+
+  const token = req.cookies;
+console.log(token)
 
   res.send({
     Marvel: "Spiderman",
@@ -50,7 +56,7 @@ app.get("/", (req, res) => {
     data: arr,
   });
 
-  res.send('<h1>this send method</h1>')
+  res.send("<h1>this send method</h1>");
 });
 
 app.get("/superman", (req, res) => {
@@ -61,6 +67,37 @@ app.get("/superman", (req, res) => {
     Shivam: "Shivam Gupta",
   });
 });
+
+//Login user
+
+app.post("/login", async (req, res) => {
+  const { gmail, password } = req.body;
+
+  const user = await User.findOne({ gmail });
+
+  if (user) {
+    const isMatch = password == user.password;
+
+    if (isMatch) {
+      return res
+
+        .cookie("volcanus", user._id, {
+          httpOnly: true,
+
+          expires: new Date(Date.now() + 5 * 60 * 1000),
+        })
+
+        .json({ massage: user });
+    }
+  }
+
+  console.log(user);
+
+  // res.json({ massage: "Invalid Creadential" });
+
+  // console.log("login route",req.body)
+});
+
 //Create
 
 app.post("/register", async (req, res) => {
