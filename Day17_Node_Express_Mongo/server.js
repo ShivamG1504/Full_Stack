@@ -2,12 +2,14 @@ import express from "express";
 import bodyParser from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import Jwt, { decode } from "jsonwebtoken";
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cookieParser())
+app.use(cookieParser());
 
 const arr = [];
+
 
 mongoose
   .connect(
@@ -43,20 +45,34 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // Read
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
   // console.log("This is home Route");
 
-  const token = req.cookies;
-console.log(token)
+  // const token = req.cookies;
+  // console.log(token);
 
-  res.send({
-    Marvel: "Spiderman",
-    Shivam: "Shivam Gupta",
+  // res.send({
+  //   Marvel: "Spiderman",
+  //   Shivam: "Shivam Gupta",
 
-    data: arr,
-  });
+  //   data: arr,
 
-  res.send("<h1>this send method</h1>");
+  // });
+
+//   res.send("<h1>this send method</h1>");
+
+const token =req.cookies.volcanus;
+
+const decoded = Jwt.verify(token, '!@#$%^&*()');
+
+const userId = decoded.id;
+
+// console.log("decoded data is =", decoded.id)
+
+let user = await User.findById(userId)
+
+res.json({massage:user});
+
 });
 
 app.get("/superman", (req, res) => {
@@ -79,9 +95,13 @@ app.post("/login", async (req, res) => {
     const isMatch = password == user.password;
 
     if (isMatch) {
+
+const token = Jwt.sign({ id:user._id }, '!@#$%^&*()');
+
       return res
 
-        .cookie("volcanus", user._id, {
+        .cookie("volcanus", token, {
+
           httpOnly: true,
 
           expires: new Date(Date.now() + 5 * 60 * 1000),
